@@ -189,7 +189,7 @@ def shorten():
         # If same URL already has a code, return that existing code
         row = db.execute("SELECT code FROM urls WHERE url = ?", (url,)).fetchone()
         if row:
-            return jsonify({"short_url": f"/{row['code']}", "code": row['code"]}), 200
+            return jsonify({"short_url": f"/{row['code']}", "code": row["code"]}), 200
         # Use alias itself as the code
         code = alias
     else:
